@@ -28,70 +28,78 @@ function App() {
 
     <BrowserRouter>
 
-      <Navbar
-        setSearchTerm={setSearchTerm}
-      />
+      <div className="app">
 
-      <Routes>
+        <Navbar
+          setSearchTerm={setSearchTerm}
+        />
 
-        <Route
-          path="/"
-          element={
-            <All
-              searchTerm={searchTerm}
+        <main className="main-content">
+
+          <Routes>
+
+            <Route
+              path="/"
+              element={
+                <All
+                  searchTerm={searchTerm}
+                />
+              }
             />
-          }
-        />
 
-        <Route
-          path="/career"
-          element={
-            <Career
-              searchTerm={searchTerm}
+            <Route
+              path="/career"
+              element={
+                <Career
+                  searchTerm={searchTerm}
+                />
+              }
             />
-          }
-        />
 
-        <Route
-          path="/cyber-security"
-          element={
-            <CyberSecurity
-              searchTerm={searchTerm}
+            <Route
+              path="/cyber-security"
+              element={
+                <CyberSecurity
+                  searchTerm={searchTerm}
+                />
+              }
             />
-          }
-        />
 
-        <Route
-          path="/data-science"
-          element={
-            <DataScience
-              searchTerm={searchTerm}
+            <Route
+              path="/data-science"
+              element={
+                <DataScience
+                  searchTerm={searchTerm}
+                />
+              }
             />
-          }
-        />
 
-        <Route
-          path="/full-stack-development"
-          element={
-            <FullStackDevelopment
-              searchTerm={searchTerm}
+            <Route
+              path="/full-stack-development"
+              element={
+                <FullStackDevelopment
+                  searchTerm={searchTerm}
+                />
+              }
             />
-          }
-        />
 
-        <Route
-          path="/blog/:id"
-          element={<BlogDetails />}
-        />
+            <Route
+              path="/blog/:id"
+              element={<BlogDetails />}
+            />
 
-        <Route
-          path="*"
-          element={<ErrorPage />}
-        />
+            <Route
+              path="*"
+              element={<ErrorPage />}
+            />
 
-      </Routes>
+          </Routes>
 
-      <Footer />
+        </main>
+
+        <Footer />
+
+      </div>
 
     </BrowserRouter>
 
