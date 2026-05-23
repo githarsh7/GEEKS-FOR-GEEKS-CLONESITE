@@ -32,7 +32,7 @@ body{
 
 .main-content{
   flex:1;
-  display:flex;          /* FIX 2: allows child pages to stretch */
+  display:flex;
   flex-direction:column;
 }
 
@@ -46,7 +46,7 @@ body{
   align-items:center;
   gap:30px;
   background:white;
-  position:sticky;       /* FIX 1: sticky already gives stacking context */
+  position:sticky;
   top:0;
   z-index:100;
   box-shadow:0 2px 12px rgba(0,0,0,.06);
@@ -210,7 +210,6 @@ body{
 /* ================= DETAILS PAGE ================= */
 
 .details-container{
-  flex:1;                /* FIX 2: stretches to fill main-content height */
   width:100%;
   padding:70px 7%;
   display:grid;
@@ -414,12 +413,12 @@ body{
     display:block;
   }
 
-  /* NAVIGATION — FIX 1: anchored to navbar, not body */
+  /* NAVIGATION */
 
   .nav-links{
     position:absolute;
-    top:100%;            /* ✅ was hardcoded 90px — now always sticks below navbar */
-    right:0;             /* ✅ was right:20px — flush to edge, no overflow */
+    top:100%;
+    right:0;
     width:240px;
     background:white;
     flex-direction:column;
