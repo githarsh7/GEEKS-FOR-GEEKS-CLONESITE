@@ -1,5 +1,4 @@
 import { useParams } from "react-router-dom";
-
 import blogs from "../BlogsData";
 
 function BlogDetails() {
@@ -7,53 +6,54 @@ function BlogDetails() {
   const { id } = useParams();
 
   const blog = blogs.find(
-    (item) =>
-      item.id === Number(id)
+    (item) => item.id === Number(id)
   );
 
   if (!blog) {
-
     return (
-      <h1>
-        Blog Not Found
-      </h1>
+      <div className="details-page-wrapper">
+        <h1 style={{ padding: "60px", textAlign: "center" }}>
+          Blog Not Found
+        </h1>
+      </div>
     );
-
   }
 
   return (
 
-    <div className="details-container">
+    <div className="details-page-wrapper">
 
-      <img
-        src={blog.img}
-        alt={blog.title}
-        className="details-image"
-      />
+      <div className="details-container">
 
-      <div className="details-content">
+        <img
+          src={blog.img}
+          alt={blog.title}
+          className="details-image"
+        />
 
-        <h1>{blog.title}</h1>
+        <div className="details-content">
 
-        <p className="details-domain">
-          {blog.domain}
-        </p>
+          <h1>{blog.title}</h1>
 
-        <p className="details-text">
-          {blog.content}
-        </p>
+          <p className="details-domain">
+            {blog.domain}
+          </p>
 
-        <a
-          href={blog.url}
-          target="_blank"
-          rel="noreferrer"
-        >
+          <p className="details-text">
+            {blog.content}
+          </p>
 
-          <button className="read-btn">
-            Read More
-          </button>
+          
+            href={blog.url}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <button className="read-btn">
+              Read More
+            </button>
+          </a>
 
-        </a>
+        </div>
 
       </div>
 
