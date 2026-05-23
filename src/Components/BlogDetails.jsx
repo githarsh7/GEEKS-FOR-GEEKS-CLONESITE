@@ -2,27 +2,19 @@ import { useParams } from "react-router-dom";
 import blogs from "../BlogsData";
 
 function BlogDetails() {
-
   const { id } = useParams();
-
-  const blog = blogs.find(
-    (item) => item.id === Number(id)
-  );
+  const blog = blogs.find((item) => item.id === Number(id));
 
   if (!blog) {
     return (
-      <div className="details-page-wrapper">
-        <h1 style={{ padding: "60px", textAlign: "center" }}>
-          Blog Not Found
-        </h1>
+      <div style={{ flex: 1, padding: "60px", textAlign: "center" }}>
+        <h1>Blog Not Found</h1>
       </div>
     );
   }
 
   return (
-
-    <div className="details-page-wrapper">
-
+    <div style={{ flex: 1 }}>
       <div className="details-container">
 
         <img
@@ -32,31 +24,15 @@ function BlogDetails() {
         />
 
         <div className="details-content">
-
           <h1>{blog.title}</h1>
-
-          <p className="details-domain">
-            {blog.domain}
-          </p>
-
-          <p className="details-text">
-            {blog.content}
-          </p>
-
-          
-            href={blog.url}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <button className="read-btn">
-              Read More
-            </button>
+          <p className="details-domain">{blog.domain}</p>
+          <p className="details-text">{blog.content}</p>
+          <a href={blog.url} target="_blank" rel="noreferrer">
+            <button className="read-btn">Read More</button>
           </a>
-
         </div>
 
       </div>
-
     </div>
   );
 }
