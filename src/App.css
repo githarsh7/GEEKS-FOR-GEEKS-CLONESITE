@@ -5,29 +5,34 @@
   font-family:Arial, Helvetica, sans-serif;
 }
 
-/* ================= ROOT FIX ================= */
+/* ================= ROOT LAYOUT FIX ================= */
 
 html,
 body,
 #root{
   height:100%;
+  margin:0;
 }
 
 body{
   background:#f5f7fb;
   overflow-x:hidden;
+}
 
+#root{
+  display:flex;
+  flex-direction:column;
+}
+
+.app{
   min-height:100vh;
 
   display:flex;
   flex-direction:column;
 }
 
-#root{
+.main-content{
   flex:1;
-
-  display:flex;
-  flex-direction:column;
 }
 
 /* ================= NAVBAR ================= */
@@ -212,12 +217,6 @@ body{
   color:#222;
 }
 
-/* ================= MAIN CONTENT ================= */
-
-.main-content{
-  flex:1;
-}
-
 /* ================= BLOG GRID ================= */
 
 .display-container{
@@ -382,8 +381,6 @@ body{
   padding:30px 20px;
 
   text-align:center;
-
-  margin-top:auto;
 }
 
 .footer-links{
@@ -675,4 +672,4 @@ body{
     font-size:1rem;
   }
 
-  }
+}
