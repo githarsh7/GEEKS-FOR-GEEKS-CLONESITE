@@ -28,121 +28,117 @@ function Navbar({ setSearchTerm }) {
 
   return (
 
-    <nav className="navbar">
+    <div style={{ position: "relative" }}>
 
-      {/* ================= LOGO ================= */}
+      <nav className="navbar">
 
-      <div className="logo">
+        <div className="logo">
 
-        <img
-          src={logo}
-          alt="logo"
-        />
+          <img
+            src={logo}
+            alt="logo"
+          />
 
-        <div className="logo-text">
+          <div className="logo-text">
 
-          <h1>
-            GeeksforGeeks
-          </h1>
+            <h1>
+              GeeksforGeeks
+            </h1>
 
-          <p>
-            Learn • Build • Grow
-          </p>
+            <p>
+              Learn • Build • Grow
+            </p>
+
+          </div>
 
         </div>
 
-      </div>
+        <div className="search-box">
 
-      {/* ================= SEARCH ================= */}
+          <FaSearch className="search-icon" />
 
-      <div className="search-box">
+          <input
+            type="text"
+            placeholder="Search blogs..."
+            value={search}
+            onChange={handleSearch}
+          />
 
-        <FaSearch className="search-icon" />
+        </div>
 
-        <input
-          type="text"
-          placeholder="Search blogs..."
-          value={search}
-          onChange={handleSearch}
-        />
-
-      </div>
-
-      {/* ================= HAMBURGER ================= */}
-
-      <div
-        className="hamburger"
-        onClick={() =>
-          setMenuOpen(!menuOpen)
-        }
-      >
-
-        {
-          menuOpen
-            ? <FaTimes />
-            : <FaBars />
-        }
-
-      </div>
-
-      {/* ================= NAVIGATION ================= */}
-
-      <div
-        className={
-          menuOpen
-            ? "nav-links active-menu"
-            : "nav-links"
-        }
-      >
-
-        <NavLink
-          to="/"
+        <div
+          className="hamburger"
           onClick={() =>
-            setMenuOpen(false)
+            setMenuOpen(!menuOpen)
           }
         >
-          All
-        </NavLink>
 
-        <NavLink
-          to="/full-stack-development"
-          onClick={() =>
-            setMenuOpen(false)
+          {
+            menuOpen
+              ? <FaTimes />
+              : <FaBars />
+          }
+
+        </div>
+
+        <div
+          className={
+            menuOpen
+              ? "nav-links active-menu"
+              : "nav-links"
           }
         >
-          Full Stack
-        </NavLink>
 
-        <NavLink
-          to="/data-science"
-          onClick={() =>
-            setMenuOpen(false)
-          }
-        >
-          Data Science
-        </NavLink>
+          <NavLink
+            to="/"
+            onClick={() =>
+              setMenuOpen(false)
+            }
+          >
+            All
+          </NavLink>
 
-        <NavLink
-          to="/cyber-security"
-          onClick={() =>
-            setMenuOpen(false)
-          }
-        >
-          Cyber Security
-        </NavLink>
+          <NavLink
+            to="/full-stack-development"
+            onClick={() =>
+              setMenuOpen(false)
+            }
+          >
+            Full Stack
+          </NavLink>
 
-        <NavLink
-          to="/career"
-          onClick={() =>
-            setMenuOpen(false)
-          }
-        >
-          Career
-        </NavLink>
+          <NavLink
+            to="/data-science"
+            onClick={() =>
+              setMenuOpen(false)
+            }
+          >
+            Data Science
+          </NavLink>
 
-      </div>
+          <NavLink
+            to="/cyber-security"
+            onClick={() =>
+              setMenuOpen(false)
+            }
+          >
+            Cyber Security
+          </NavLink>
 
-    </nav>
+          <NavLink
+            to="/career"
+            onClick={() =>
+              setMenuOpen(false)
+            }
+          >
+            Career
+          </NavLink>
+
+        </div>
+
+      </nav>
+
+    </div>
   );
 }
 
